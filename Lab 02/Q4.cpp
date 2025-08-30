@@ -77,5 +77,6 @@ int main()
         cout<<"\n==========================================="<<endl;
         cout<<"Total Expances   : "<<sum<<endl;
         cout<<"Average Expances : "<<(double)sum/n<<endl;
+        delete [] expances;
    // }
 }

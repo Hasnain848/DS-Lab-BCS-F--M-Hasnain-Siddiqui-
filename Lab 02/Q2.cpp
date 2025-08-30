@@ -9,7 +9,7 @@ using namespace std;
 int main(){
     int **seatchart;
     int row ,colom,choice;
-    cout<<"Enter the rowa in class: ";
+    cout<<"Enter the row in class: ";
     cin>>row;
     cout<<"Enter the seats on each bench: ";
     cin>>colom;
