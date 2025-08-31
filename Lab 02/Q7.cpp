@@ -123,20 +123,20 @@ public:
 };
 int main()
 {
-    // --- Employees for Department 1 ---
+    
     Employee dept1Emp[] = {
         Employee("Ali", 50000),
         Employee("Hasnain", 60000),
         Employee("Obaid", 55000)};
     Department *d1 = new Department("CS", dept1Emp, 3);
 
-    // --- Employees for Department 2 ---
+
     Employee dept2Emp[] = {
         Employee("Ahmed", 70000),
         Employee("Ibrahim", 80000)};
     Department *d2 = new Department("IT", dept2Emp, 2);
 
-    // --- Employees for Department 3 ---
+
     Employee dept3Emp[] = {
         Employee("Ahsan", 45000),
         Employee("Bilal", 40000),
@@ -144,13 +144,12 @@ int main()
         Employee("Saad", 46000)};
     Department *d3 = new Department("Finance", dept3Emp, 4);
 
-    // --- Put departments into an array ---
+   
     Department *arr[] = {d1, d2, d3};
 
-    // --- Create University (Jagged Array of Departments) ---
     University uni(3, arr);
 
-    // --- Show Results ---
+
     uni.showHighestSalaries();
     uni.showDeptWithMaxAverage();
 
