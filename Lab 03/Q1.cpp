@@ -97,6 +97,4 @@ int main(){
     cout<<"Palindrome: ";
     (list.palindrome()==true)?cout<<"True"<<endl : cout<<"False"<<endl;
 
-    //  cout<<"\n\nDeleted Last Element: "<<list.DeleteLast()<<endl;
-    //  list.Display();
 }
