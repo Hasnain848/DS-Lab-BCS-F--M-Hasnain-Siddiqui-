@@ -14,19 +14,14 @@ void interpolationSearch(int arr[],int size,int key) {
         if(arr[pos]==key){
             cout<<"Target element index: "<<pos<<endl;
             return;
-
         }
-
         if(arr[pos]<key){
-
             low =pos+1; 
         }
         else{
-
             high =pos-1; 
         }
     }
-
     cout<<"ERROR: Target element is not in the list"<<endl;
 }
 
