@@ -107,7 +107,7 @@ int main() {
     cout<<"=========== Enter the Data in List ============"<<endl;
     for(int i=0;i<size;i++){
         cout<<"Element "<<i+1<<": ";
-        cin>>value;             // you can input values, e.g., 1 2 3 4 ...
+        cin>>value;             
         list.Insert(value);
     }
     cout<<"Enter k (the k-th person to eliminate): ";

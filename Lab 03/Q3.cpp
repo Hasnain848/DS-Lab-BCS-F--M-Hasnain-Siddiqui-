@@ -41,17 +41,37 @@ class LL{
         }
         cout<<"NULL"<<endl;
     }
-    Node* reversing(Node* p){
-     Node* q =NULL;
-     Node* r =NULL;
+    void reversing(int k){
+       Node* p=Head;
+        Node *dummy=new Node(0);
+        dummy->next=p;
+         Node* prevGroupEnd = dummy;
+        while(1){
+            Node *kgroup = prevGroupEnd;
+            for(int i=0;i<k && kgroup!=NULL;i++){
+              kgroup = kgroup->next;
+            }
+            if(kgroup==NULL){
+                break;
+            }
+            Node *groupstart=prevGroupEnd->next;
+            Node *nextgroup = kgroup->next;
+             Node* q =NULL;
+             Node* r =NULL;
+             Node *curr = groupstart;
+            while(curr!=nextgroup){
+                r =q;
+                q =curr;
+                curr =curr->next;
+                q->next=r;
+            }
+            prevGroupEnd->next=q;
+            groupstart->next=nextgroup;
 
-    while(p){
-        r =q;
-        q =p;
-        p =p->next;
-        q->next=r;
-    }
-    return q;
+            prevGroupEnd =groupstart;
+        }
+     Head = dummy->next;
+        delete dummy;
 }
     
 
@@ -69,24 +89,23 @@ class LL{
     }
 };
 int main(){
-     int i=1,value,size1,size2;
-    LL list1,list2;
-    cout<<"Enter the size of List 1: ";
-    cin>>size1;
-    cout<<"Enter the size of List 2: ";
-    cin>>size2;
-    cout<<"\n=========== Enter the Data in List 1 ============"<<endl;
-    for(int i=0;i<size1;i++){
-        cout<<"Element "<<i+1<<": ";
-        cin>>value;
-        list1.Insert(value);
-    }
-     cout<<"\n=========== Enter the Data in List 2 ============"<<endl;
-    for(int i=0;i<size2;i++){
-        cout<<"Element "<<i+1<<": ";
-        cin>>value;
-        list2.Insert(value);
-    }
+    LL list;
+    int k;
+    list.Insert(1);
+    list.Insert(2);
+    list.Insert(3);
+    list.Insert(4);
+    list.Insert(5);
+    list.Insert(6);
+    list.Insert(7);
+    list.Insert(8);
+    cout<<"=========== Original List =========="<<endl;
+    list.Display();
+    cout<<"Enter the K: ";
+    cin>>k;
+    list.reversing(k);
+    cout<<"\n=========== After Reversing in Group=========="<<endl;
+    list.Display();
   
 
 }
