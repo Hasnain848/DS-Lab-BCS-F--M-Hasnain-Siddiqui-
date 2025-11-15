@@ -42,6 +42,7 @@ class maxheap{
     }
      
     void updatekey(int i,int newval){
+        if(i<0 && i>size)return;
        heap[i]=newval;
        if(newval>heap[parent(i)]){
            heapify_up(i);
@@ -66,6 +67,26 @@ class maxheap{
             heapifydown(largest);
         }
     }
+    bool checkbinarytree(){
+        for(int i=0;i<size;i++){
+            int l = left(i);
+            int r = right(i);
+            if(l < size && heap[i]<heap[l])
+                return false;
+            if(r < size && heap[i]<heap[r])
+                return false;
+        }
+        return true;
+    }
+    void heapsort(){
+        int temp = size;
+        for(int i=size-1;i>0;i--){
+            swap(heap[0],heap[i]);
+            size--;
+            heapifydown(0);
+        }
+        size = temp;
+    }
     void display(){
         for(int i=0;i<size;i++){
             cout<<heap[i]<<" ";
@@ -80,7 +101,9 @@ int main(){
     heap.insert(5);
     heap.insert(4);
     heap.display();
-    heap.updatekey(1,0);
+    
+    cout<<heap.checkbinarytree()<<endl;
+    heap.heapsort();
     heap.display();
 
 }
