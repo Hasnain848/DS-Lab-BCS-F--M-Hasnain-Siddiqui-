@@ -107,7 +107,7 @@ int main() {
     node* result = myhash.search("A");
 
     if (result != nullptr)
-        cout << "Found → " << result->key << " : " << result->value << endl;
+        cout << "Found " << result->key << " : " << result->value << endl;
     else
         cout << "Key not found\n";
 
